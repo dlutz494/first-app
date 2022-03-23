@@ -1,0 +1,13 @@
+/node_modules
+/public/*
+/storage/*
+/vendor
+.env
+.phpunit.result.cache
+npm-debug.log
+/.idea
+
+!/public/.htaccess
+!/public/favicon.ico
+!/public/index.php
+!/public/robots.txt
