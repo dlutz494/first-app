@@ -5,5 +5,6 @@
 <script src="resources/js/app.js"></script>
 
 <body>
-    <h1>First Page</h1>
+    <h1>These are the tasks</h1>
+    <a href="/">Go back to home</a>
 </body>
