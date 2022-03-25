@@ -5,9 +5,8 @@
 <script src="resources/js/app.js"></script>
 
 <body>
-    <h1>Things I want to do</h1>
-    <ul>
-        <li><a href="task">Keep practicing git stuff</a></li>
-        <li>Rewatch PHP and Laravel laracasts</li>
-    </ul>
+    <h1>My First App</h1>
+    <h2>Using this to try out random stuff and learn</h2>
+
+    <a href="/">See my tasks</a>
 </body>

@@ -5,6 +5,8 @@
 <script src="resources/js/app.js"></script>
 
 <body>
-    <h1>These are the tasks</h1>
-    <a href="/">Go back to home</a>
+<h1>This is a task!</h1>
+<h1>But which one?</h1>
+<a href="/">Go back to home</a>
+
 </body>
