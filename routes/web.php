@@ -28,10 +28,11 @@ Route::get('/tasks/{task}', function ($slug) {
         return redirect('/');
     }
 
-    $task = cache()->remember("tasks.{$slug}", now()->addMinute(5), function () use ($path) {
-        return file_get_contents($path);
-    });
+//    $task = cache()->remember("tasks.{$slug}", now()->addMinute(5), function () use ($path) {
+//        return file_get_contents($path);
+//    });
 
+    $task = file_get_contents($path);
 
     return view('task', [
         'task' => $task
