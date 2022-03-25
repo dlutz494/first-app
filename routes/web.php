@@ -21,6 +21,16 @@ Route::get('/tasks', function () {
     return view('tasks');
 });
 
-Route::get('/task', function () {
-    return view('task');
-});
+Route::get('/tasks/{task}', function ($slug) {
+    $path = __DIR__ . "/../resources/tasks/{$slug}.html";
+
+    if (! file_exists($path)) {
+        return redirect('/');
+    }
+
+    $task = file_get_contents($path);
+
+    return view('task', [
+        'task' => $task
+    ]);
+})->where('task', '[A-z_\-]+');

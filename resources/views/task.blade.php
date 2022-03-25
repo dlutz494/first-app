@@ -4,8 +4,11 @@
 <link rel="stylesheet" href="/app.css">
 
 <body>
-<h1>This is a task!</h1>
-<h1>But which one?</h1>
+<h1>
+    <?= /** @var string $task */
+    $task
+    ?>
+</h1>
 <a href="/tasks">Go back to Tasks list</a>
 
 </body>
