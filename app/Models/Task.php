@@ -9,20 +9,36 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected string $name;
+    protected string $description;
+    protected bool $status;
+
     protected $fillable = [
         'name',
         'description',
-        'is_complete',
+        'status',
     ];
 
     protected $casts = [
         'name' => 'string',
         'description' => 'string',
-        'is_complete' => 'boolean',
+        'status' => 'bool',
     ];
 
-    public function getTask()
+    public function getName() : string
     {
-
+        return $this->name;
     }
+
+
+    public function getDescription() : string
+    {
+        return $this->description;
+    }
+
+    public function getStatus() : string
+    {
+        return $this->status;
+    }
+
 }
