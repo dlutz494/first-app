@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Task;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,22 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
+    $files = File::files(resource_path('tasks/'));
+    $tasks = [];
+
+    foreach ($files as $file) {
+        $document = YamlFrontMatter::parseFile($file);
+
+        $tasks[] = new Task(
+            $document->title,
+            $document->description,
+            $document->complete_status,
+            $document->date
+        );
+    }
+
     return view('tasks', [
-        'tasks' => Task::all(),
+        'tasks' => $tasks,
     ]);
 });
 
