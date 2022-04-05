@@ -33,4 +33,4 @@ Route::get('/task/{task}', function ($slug) {
     return view('task', [
         'task' => $task
     ]);
-});
+})->where('task', '[A-z_\-]+');
