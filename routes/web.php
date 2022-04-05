@@ -22,15 +22,11 @@ Route::get('/tasks', function () {
 });
 
 Route::get('/task/{task}', function ($slug) {
-    $path = __DIR__ . "/../resources/tasks/{$slug}.html";
-
-    if (! file_exists($path)) {
-        abort(404);
+    if (! file_exists($path = __DIR__ . "/../resources/tasks/{$slug}.html")) {
+        return redirect('/');
     }
 
-    $task = file_get_contents($path);
+    $task = cache()->remember("post.{$slug}", now()->addMinute(), fn() => file_get_contents($path));
 
-    return view('task', [
-        'task' => $task
-    ]);
+    return view('task', ['task' => $task]);
 })->where('task', '[A-z_\-]+');
