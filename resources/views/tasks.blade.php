@@ -13,13 +13,13 @@
 {{--        <li><a href="/tasks/third-task">Rewatch PHP and Laravel Laracasts</a></li>--}}
 {{--    </ul>--}}
 
-    <h2><a href="/task">Laravel 8 from Scratch</a></h2>
+    <h2><a href="/task/first-task">Laravel 8 from Scratch</a></h2>
     <p>Continue watching and working on the Laravel 8 from Scratch Laracast.</p>
 
-    <h2><a href="/task">Keyboard Navigation</a></h2>
+    <h2><a href="/task/second-task">Keyboard Navigation</a></h2>
     <p>Continue practicing using keyboard navigation over mouse where possible.</p>
 
-    <h2><a href="/task">Tests</a></h2>
+    <h2><a href="/task/third-task">Tests</a></h2>
     <p>Try getting tests to work.</p>
 
 </body>
