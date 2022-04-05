@@ -7,19 +7,9 @@
     <h1>These are the tasks</h1>
     <a href="/">Go back to home</a>
 
-{{--    <ul>--}}
-{{--        <li><a href="/tasks/first-task">Keep practicing git stuff</a></li>--}}
-{{--        <li><a href="/tasks/second-task">Keep practicing keyboard navigation and selection</a></li>--}}
-{{--        <li><a href="/tasks/third-task">Rewatch PHP and Laravel Laracasts</a></li>--}}
-{{--    </ul>--}}
-
-    <h2><a href="/task/first-task">Laravel 8 from Scratch</a></h2>
-    <p>Continue watching and working on the Laravel 8 from Scratch Laracast.</p>
-
-    <h2><a href="/task/second-task">Keyboard Navigation</a></h2>
-    <p>Continue practicing using keyboard navigation over mouse where possible.</p>
-
-    <h2><a href="/task/third-task">Tests</a></h2>
-    <p>Try getting tests to work.</p>
-
+    <?php foreach ($tasks as $task) : ?>
+    <article>
+        <?= $task ?>
+    </article>
+    <?php endforeach; ?>
 </body>

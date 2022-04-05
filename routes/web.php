@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,15 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
-    return view('tasks');
+    return view('tasks', [
+        'tasks' => Task::all(),
+    ]);
 });
 
 Route::get('/task/{task}', function ($slug) {
-    if (! file_exists($path = __DIR__ . "/../resources/tasks/{$slug}.html")) {
-        return redirect('/');
-    }
-
-    $task = cache()->remember("post.{$slug}", now()->addMinute(), fn() => file_get_contents($path));
-
-    return view('task', ['task' => $task]);
+    return view('task', [
+        'task' => Task::find($slug),
+    ]);
 })->where('task', '[A-z_\-]+');
