@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Task;
+use App\Models\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
@@ -17,31 +17,13 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/tasks', function () {
-    $files = File::files(resource_path('tasks/'));
-    $tasks = [];
-
-    foreach ($files as $file) {
-        $document = YamlFrontMatter::parseFile($file);
-
-        $tasks[] = new Task(
-            $document->title,
-            $document->description,
-            $document->complete_status,
-            $document->date
-        );
-    }
-
-    return view('tasks', [
-        'tasks' => $tasks,
+    return view('posts', [
+        'posts' => Post::all(),
     ]);
 });
 
-Route::get('/task/{task}', function ($slug) {
-    return view('task', [
-        'task' => Task::find($slug),
+Route::get('/posts/{post}', function ($slug) {
+    return view('post', [
+        'post' => Post::find($slug),
     ]);
-})->where('task', '[A-z_\-]+');
+})->where('post', '[A-z_\-]+');
