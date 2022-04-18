@@ -1,9 +1,6 @@
-<!doctype html>
+@extends('layout')
 
-<title>Post</title>
-<link rel="stylesheet" href="/app.css">
-
-<body>
+@section('content')
 <article>
     <h1> {!! $post->title !!}</h1>
 
@@ -13,5 +10,4 @@
 
     <a href="/">Go Back</a>
 </article>
-
-</body>
+@endsection

@@ -1,23 +1,20 @@
-<!doctype html>
+@extends('layout')
 
-<title>Posts</title>
-<link rel="stylesheet" href="/app.css">
+@section('content')
+    @foreach ($posts as $post)
+        <article>
+            <h1>
+                <a href="/posts/{{ $post->slug }}">
+                    {{ $post->title }}
+                </a>
+            </h1>
+            <p>
+                {!! date('Y M d', $post->date) !!}
+            </p>
 
-<body>
-@foreach ($posts as $post)
-<article>
-    <h1>
-        <a href="/posts/{{ $post->slug }}">
-            {{ $post->title }}
-        </a>
-    </h1>
-    <p>
-        {!! date('Y M d', $post->date) !!}
-    </p>
-
-    <div>
-        {!! $post->excerpt !!}
-    </div>
-</article>
-@endforeach
-</body>
+            <div>
+                {!! $post->excerpt !!}
+            </div>
+        </article>
+    @endforeach
+@endsection
