@@ -4,13 +4,16 @@
 <link rel="stylesheet" href="/app.css">
 
 <body>
-<?php foreach ($posts as $post) : ?>
+<?php $posts = {};foreach ($posts as $post) : ?>
 <article>
     <h1>
         <a href="/posts/<?= $post->slug ?>">
-            <?=$post->title?>
+            <?= $post->title ?>
         </a>
     </h1>
+    <p>
+        <?= date('Y M d', $post->date) ?>
+    </p>
 
     <div>
         <?=$post->excerpt?>

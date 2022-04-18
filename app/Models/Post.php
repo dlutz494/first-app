@@ -33,7 +33,7 @@ class Post
                 $document->body(),
                 $document->date,
                 $document->slug,
-            ));
+            ))->sortBy('date');
     }
 
     public static function find($slug)
