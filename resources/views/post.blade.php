@@ -10,6 +10,8 @@
     <div>
         <?= $post->body; ?>
     </div>
+
+    <a href="/">Go Back</a>
 </article>
 
 </body>
