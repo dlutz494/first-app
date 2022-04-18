@@ -1,17 +1,11 @@
-<!doctype html>
+<x-layout>
+    <article>
+        <h1> {!! $post->title !!}</h1>
 
-<title>Post</title>
-<link rel="stylesheet" href="/app.css">
+        <div>
+            {!! $post->body !!}
+        </div>
 
-<body>
-<article>
-    <h1> {!! $post->title !!}</h1>
-
-    <div>
-        {!! $post->body !!}
-    </div>
-
-    <a href="/">Go Back</a>
-</article>
-
-</body>
+        <a href="/">Go Back</a>
+    </article>
+</x-layout>
