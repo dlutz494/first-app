@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/app.css">
 
 <body>
-<?php $posts = {};foreach ($posts as $post) : ?>
+<?php foreach ($posts as $post) : ?>
 <article>
     <h1>
         <a href="/posts/<?= $post->slug ?>">
