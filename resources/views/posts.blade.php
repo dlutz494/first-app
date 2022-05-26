@@ -7,7 +7,7 @@
                 </a>
             </h1>
             <p>
-                {!! date('Y M d', $post->date) !!}
+                {!! date('Y M d', $post->published_at) !!}
             </p>
 
             <div>
