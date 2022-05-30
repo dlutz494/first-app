@@ -10,6 +10,10 @@
                 {!! date('Y M d', $post->published_at) !!}
             </p>
 
+            <p>
+                <a href="#">{{ $post->category->name }}</a>
+            </p>
+
             <div>
                 {!! $post->excerpt !!}
             </div>
